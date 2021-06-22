@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="ndejo"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-05-11 05:49:55 PM"/>
+        <attribute name="created" value="bmRlam87RklUUkFJTFlBU0E7MjAyMS0wNS0xMTswNTozMjoxOCBQTTsyNjI4"/>
+        <attribute name="edited" value="bmRlam87RklUUkFJTFlBU0E7MjAyMS0wNS0xMTswNTo0OTo1NSBQTTsxOzI3NDU="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="nama" type="String" array="False" size=""/>
+            <declare name="ulang" type="String" array="False" size=""/>
+            <declare name="pilih" type="Integer" array="False" size=""/>
+            <declare name="gaya" type="Real" array="True" size="3"/>
+            <declare name="mJenis" type="Real" array="True" size="3"/>
+            <output expression="&quot;PROGRAM FISIKA DASAR&quot;" newline="True"/>
+            <output expression="&quot;BESAR GAYA &amp; MASSA JENIS&quot;" newline="True"/>
+            <output expression="&quot;Masukkan nama anda : &quot;" newline="True"/>
+            <input variable="nama"/>
+            <output expression="&quot;Hai &quot;" newline="False"/>
+            <output expression="nama" newline="True"/>
+            <do expression="ulang == &quot;y&quot; or ulang == &quot;Y&quot;">
+                <output expression="&quot;Menu Pilihan : &quot;" newline="True"/>
+                <output expression="&quot;1. Massa Jenis&quot;" newline="True"/>
+                <output expression="&quot;2. Besar Gaya&quot;" newline="True"/>
+                <output expression="&quot;Pilih menu : &quot;" newline="True"/>
+                <input variable="pilih"/>
+                <if expression="pilih == 1">
+                    <then>
+                        <output expression="&quot;1. Menghitung Massa Jenis&quot;" newline="True"/>
+                        <output expression="&quot;Masukkan nilai massa(kg): &quot;" newline="True"/>
+                        <input variable="mJenis[1]"/>
+                        <output expression="&quot;Masukkan nilai volume(m3): &quot;" newline="True"/>
+                        <input variable="mJenis[2]"/>
+                        <output expression="&quot;Nilai Massa Jenis adalah : &quot;" newline="True"/>
+                        <output expression="mJenis[3]" newline="True"/>
+                        <output expression="mJenis[1]/mJenis[2]" newline="True"/>
+                    </then>
+                    <else>
+                        <if expression="pilih == 2">
+                            <then>
+                                <output expression="&quot;2. Menghitung Besar Gaya&quot;" newline="True"/>
+                                <output expression="&quot;Masukkan nilai massa(kg): &quot;" newline="True"/>
+                                <input variable="gaya[1]"/>
+                                <output expression="&quot;Masukkan nilai percepatan gravitasi bumi(m3): &quot;" newline="True"/>
+                                <input variable="gaya[2]"/>
+                                <output expression="&quot;Besar Gaya adalah : &quot;" newline="True"/>
+                                <output expression="gaya[1]*gaya[2]" newline="True"/>
+                            </then>
+                            <else>
+                                <output expression="&quot;Error&quot;" newline="True"/>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+                <output expression="&quot;Ingin Hitung Lagi (Y/T)? &quot;" newline="True"/>
+                <input variable="ulang"/>
+            </do>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,59 @@
+#include <iostream> // Library atau Perpustakaan C++
+using namespace std; // penggunaan namespace standar
+ 
+int main(){ // Program Utama
+	
+	// Deklarasi tipe data variabel
+	int n; // Deklarasi variabel jumlah orang
+	float tinggi; // Deklarasi variabel tinggi badan
+	float berat; // Deklarasi variabel berat badan
+	float bmi; // Deklarasi variabel body mass index (berat badan ideal)
+	float badan; // Deklarasi variabel kategori badan
+	
+	// Judul program
+	cout << "+=====================================+" << endl;
+	cout << "|        PROGRAM BIOLOGI DASAR        |" << endl;
+	cout << "|        BODY MASS INDEX (BMI)        |" << endl;
+	cout << "+=====================================+" << endl;
+	cout << endl;
+	
+	// jumlah orang
+	cout << "Masukkan jumlah orang : ";
+	cin >> n; // input array jumlah orang
+	char orang[n]; // deklarasi array jumlah orang
+	
+	for(int i = 0; i < n; i++){ // Perulangan for
+		// tinggi dan berat badan
+		cout << "Masukkan tinggi badan orang ke-" << i+1 << " (cm) : ";
+		cin >> tinggi; // inputan tinggi badan
+		cout << "Masukkan berat badan orang ke-" << i+1 << " (kg) : ";
+		cin >> berat; // inputan berat badan
+		
+		tinggi = tinggi/100; // rumus tinggi dari satuan (cm) ke satuan (m)
+		bmi = berat/(tinggi*tinggi); // rumus bmi
+		
+		badan = bmi; // rumus kategori badan
+		
+		// Hasil
+		cout << "Jumlah BMI orang ke-" << i+1 << " adalah " << bmi << " dan dikategorikan badan yang ";
+		
+		if(badan < 18.5){ // Pernyataan 1
+			cout << "kurus"; // kategori 1
+		}
+		else if(badan < 23){ // Pernyataan 2
+			cout << "normal"; // kategori 2
+		}
+		else if(badan < 30){  // Pernyataan 3
+			cout << "diatas normal"; // kategori 3
+		}
+		else if(badan > 30){  // Pernyataan 4
+			cout << "obesitas"; // kategori 4
+		}
+		else {
+			cout << "Error"; // Pernyataan selain pernyataan diatas
+		}
+		cout << endl; // Baris baru
+	}
+	
+	return 0; // Pengembalian nilai
+}

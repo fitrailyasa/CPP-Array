@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="ndejo"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-05-19 10:41:19 AM"/>
+        <attribute name="created" value="bmRlam87RklUUkFJTFlBU0E7MjAyMS0wNS0xNzswMzo1Njo0NSBQTTsyNjM4"/>
+        <attribute name="edited" value="bmRlam87RklUUkFJTFlBU0E7MjAyMS0wNS0xOTsxMDo0MToxOSBBTTsyNTsyNzgw"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="Deklarasi Tipe Data Variabel"/>
+            <declare name="n, r" type="Integer" array="False" size=""/>
+            <comment text="Deklarasi Array n dan r Faktorial"/>
+            <declare name="nrfak" type="Integer" array="True" size="3"/>
+            <assign variable="nrfak[0]" expression="1"/>
+            <assign variable="nrfak[1]" expression="1"/>
+            <assign variable="nrfak[2]" expression="1"/>
+            <comment text="deklarasi integer i untuk perulangan for"/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <declare name="ulang" type="String" array="False" size=""/>
+            <declare name="pilih" type="Integer" array="False" size=""/>
+            <comment text="Judul"/>
+            <output expression="&quot;PROGRAM MATEMATIKA DASAR&#13;&#10;KOMBINASI &amp; PERMUTASI&quot;" newline="True"/>
+            <do expression="ulang == &quot;y&quot; or ulang == &quot;Y&quot;">
+                <output expression="&quot;Menu Pilihan :&quot;" newline="True"/>
+                <output expression="&quot;1. Kombinasi&quot;" newline="True"/>
+                <output expression="&quot;2. Permutasi&quot;" newline="True"/>
+                <input variable="pilih"/>
+                <comment text="r tidak boleh lebih besar dari n unsur"/>
+                <output expression="&quot;Masukkan n : &quot;" newline="True"/>
+                <input variable="n"/>
+                <output expression="&quot;Masukkan r : &quot;" newline="True"/>
+                <input variable="r"/>
+                <while expression="n &lt; r">
+                    <output expression="&quot;r tidak boleh lebih besar dari n&quot;" newline="True"/>
+                    <output expression="&quot;Masukkan n : &quot;" newline="True"/>
+                    <input variable="n"/>
+                    <output expression="&quot;Masukkan r : &quot;" newline="True"/>
+                    <input variable="r"/>
+                </while>
+                <comment text="Pengulangan for"/>
+                <comment text="perulangan n faktorial"/>
+                <for variable="i" start="n" end="1" direction="dec" step="1">
+                    <assign variable="nrfak[0]" expression="nrfak[0]*i"/>
+                </for>
+                <comment text="perulangan n-r faktorial"/>
+                <for variable="i" start="n-r" end="1" direction="dec" step="1">
+                    <assign variable="nrfak[1]" expression="nrfak[1]*i"/>
+                </for>
+                <comment text="perulangan r faktorial"/>
+                <for variable="i" start="r" end="1" direction="dec" step="1">
+                    <assign variable="nrfak[2]" expression="nrfak[2]*i"/>
+                </for>
+                <comment text="Percabangan"/>
+                <if expression="pilih == 1">
+                    <then>
+                        <comment text="Pilihan 1"/>
+                        <output expression="&quot;Kombinasi r dari n unsur : &quot;" newline="True"/>
+                        <output expression="nrfak[0]/(nrfak[1]*nrfak[2])" newline="True"/>
+                    </then>
+                    <else>
+                        <if expression="pilih == 2">
+                            <then>
+                                <comment text="Pilihan 2"/>
+                                <output expression="&quot;Permutasi r dari n unsur : &quot;" newline="True"/>
+                                <output expression="nrfak[0]/nrfak[1]" newline="True"/>
+                            </then>
+                            <else>
+                                <comment text="Selain Pilihan dari pilihan diatas"/>
+                                <output expression="&quot;ERROR!&quot;" newline="True"/>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+                <comment text="Ulang"/>
+                <output expression="&quot;Ingin Hitung Lagi (Y/T)? &quot;" newline="True"/>
+                <input variable="ulang"/>
+            </do>
+        </body>
+    </function>
+</flowgorithm>

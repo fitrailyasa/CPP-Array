@@ -1,0 +1,183 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="ndejo"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-05-19 02:38:00 AM"/>
+        <attribute name="created" value="bmRlam87RklUUkFJTFlBU0E7MjAyMS0wNS0xOTswMTo1MTozOCBBTTsyNjIw"/>
+        <attribute name="edited" value="bmRlam87RklUUkFJTFlBU0E7MjAyMS0wNS0xOTswMjozODowMCBBTTsxNDsyNzc1"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="Deklarasi Variabel"/>
+            <comment text="bpm = beats per minute (denyut per menit)"/>
+            <declare name="umur, denyut, bpmMaks, bpm, keadaan" type="Integer" array="False" size=""/>
+            <declare name="n, i" type="Integer" array="False" size=""/>
+            <output expression="&quot;PROGRAM BIOLOGI DASAR&quot;" newline="True"/>
+            <output expression="&quot;PROGRAM HITUNG BPM&quot;" newline="True"/>
+            <output expression="&quot;Masukkan jumlah pasien : &quot;" newline="True"/>
+            <input variable="n"/>
+            <declare name="pasien" type="String" array="True" size="n"/>
+            <for variable="i" start="0" end="n-1" direction="inc" step="1">
+                <output expression="&quot;Masukan nama pasien ke-&quot;" newline="False"/>
+                <output expression="i+1" newline="False"/>
+                <output expression="&quot; : &quot;" newline="True"/>
+                <input variable="pasien[i]"/>
+                <output expression="&quot;Masukan umur pasien ke-&quot;" newline="False"/>
+                <output expression="i+1" newline="False"/>
+                <output expression="&quot; : &quot;" newline="True"/>
+                <input variable="umur"/>
+                <assign variable="bpmMaks" expression="220-umur"/>
+                <output expression="&quot;Maksimal detak jantung pasien ke-&quot;" newline="False"/>
+                <output expression="i+1" newline="False"/>
+                <output expression="&quot; adalah &quot;" newline="False"/>
+                <output expression="bpmMaks" newline="True"/>
+                <output expression="&quot;Berapa denyut nadi pasien ke-&quot;" newline="False"/>
+                <output expression="i+1" newline="False"/>
+                <output expression="&quot; : &quot;" newline="True"/>
+                <input variable="denyut"/>
+                <assign variable="bpm" expression="denyut*4"/>
+                <assign variable="keadaan" expression="bpm"/>
+                <output expression="&quot;Jadi detak jantung pasien ke-&quot;" newline="False"/>
+                <output expression="&quot; adalah &quot;" newline="False"/>
+                <output expression="bpm" newline="False"/>
+                <output expression="&quot;bpm dalam keadaan &quot;" newline="False"/>
+                <if expression="umur &lt;= 29">
+                    <then>
+                        <if expression="keadaan &lt; 70">
+                            <then>
+                                <output expression="&quot;Sangat Baik&quot;" newline="True"/>
+                            </then>
+                            <else>
+                                <if expression="keadaan &lt;= 77">
+                                    <then>
+                                        <output expression="&quot;Baik&quot;" newline="True"/>
+                                    </then>
+                                    <else>
+                                        <if expression="keadaan &lt;= 94">
+                                            <then>
+                                                <output expression="&quot;Cukup&quot;" newline="True"/>
+                                            </then>
+                                            <else>
+                                                <if expression="keadaan &gt; 94">
+                                                    <then>
+                                                        <output expression="&quot;Kurang&quot;" newline="True"/>
+                                                    </then>
+                                                    <else/>
+                                                </if>
+                                            </else>
+                                        </if>
+                                    </else>
+                                </if>
+                            </else>
+                        </if>
+                    </then>
+                    <else>
+                        <if expression="umur &lt;= 39">
+                            <then>
+                                <if expression="keadaan &lt; 72">
+                                    <then>
+                                        <output expression="&quot;Sangat Baik&quot;" newline="True"/>
+                                    </then>
+                                    <else>
+                                        <if expression="keadaan &lt;= 79">
+                                            <then>
+                                                <output expression="&quot;Baik&quot;" newline="True"/>
+                                            </then>
+                                            <else>
+                                                <if expression="keadaan &lt;= 96">
+                                                    <then>
+                                                        <output expression="&quot;Cukup&quot;" newline="True"/>
+                                                    </then>
+                                                    <else>
+                                                        <if expression="keadaan &gt; 96">
+                                                            <then>
+                                                                <output expression="&quot;Kurang&quot;" newline="True"/>
+                                                            </then>
+                                                            <else/>
+                                                        </if>
+                                                    </else>
+                                                </if>
+                                            </else>
+                                        </if>
+                                    </else>
+                                </if>
+                            </then>
+                            <else>
+                                <if expression="umur &lt;= 49">
+                                    <then>
+                                        <if expression="keadaan &lt; 74">
+                                            <then>
+                                                <output expression="&quot;Sangat Baik&quot;" newline="True"/>
+                                            </then>
+                                            <else>
+                                                <if expression="keadaan &lt;= 81">
+                                                    <then>
+                                                        <output expression="&quot;Baik&quot;" newline="True"/>
+                                                    </then>
+                                                    <else>
+                                                        <if expression="keadaan &lt;= 98">
+                                                            <then>
+                                                                <output expression="&quot;Cukup&quot;" newline="True"/>
+                                                            </then>
+                                                            <else>
+                                                                <if expression="keadaan &gt; 98">
+                                                                    <then>
+                                                                        <output expression="&quot;Kurang&quot;" newline="True"/>
+                                                                    </then>
+                                                                    <else/>
+                                                                </if>
+                                                            </else>
+                                                        </if>
+                                                    </else>
+                                                </if>
+                                            </else>
+                                        </if>
+                                    </then>
+                                    <else>
+                                        <if expression="umur &gt;= 50">
+                                            <then>
+                                                <if expression="keadaan &lt; 76">
+                                                    <then>
+                                                        <output expression="&quot;Sangat Baik&quot;" newline="True"/>
+                                                    </then>
+                                                    <else>
+                                                        <if expression="keadaan &lt;= 83">
+                                                            <then>
+                                                                <output expression="&quot;Baik&quot;" newline="True"/>
+                                                            </then>
+                                                            <else>
+                                                                <if expression="keadaan &lt;= 100">
+                                                                    <then>
+                                                                        <output expression="&quot;Cukup&quot;" newline="True"/>
+                                                                    </then>
+                                                                    <else>
+                                                                        <if expression="keadaan &gt; 100">
+                                                                            <then>
+                                                                                <output expression="&quot;Kurang&quot;" newline="True"/>
+                                                                            </then>
+                                                                            <else/>
+                                                                        </if>
+                                                                    </else>
+                                                                </if>
+                                                            </else>
+                                                        </if>
+                                                    </else>
+                                                </if>
+                                            </then>
+                                            <else>
+                                                <output expression="&quot;Error!&quot;" newline="True"/>
+                                            </else>
+                                        </if>
+                                    </else>
+                                </if>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

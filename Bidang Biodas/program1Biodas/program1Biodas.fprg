@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="ndejo"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-05-11 05:30:26 PM"/>
+        <attribute name="created" value="bmRlam87RklUUkFJTFlBU0E7MjAyMS0wNS0xMTswNDo1MzoyNiBQTTsyNjI5"/>
+        <attribute name="edited" value="bmRlam87RklUUkFJTFlBU0E7MjAyMS0wNS0xMTswNTozMDoyNiBQTTsxOzI3MzM="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n" type="Integer" array="False" size=""/>
+            <declare name="tinggi" type="Real" array="False" size=""/>
+            <declare name="berat" type="Real" array="False" size=""/>
+            <declare name="bmi" type="Real" array="False" size=""/>
+            <declare name="badan" type="Real" array="False" size=""/>
+            <output expression="&quot;PROGRAM BIOLOGI DASAR&quot;" newline="True"/>
+            <output expression="&quot;BODY MASS INDEX (BMI)&quot;" newline="True"/>
+            <output expression="&quot;Masukan jumlah orang : &quot;" newline="True"/>
+            <input variable="n"/>
+            <declare name="orang" type="String" array="True" size="n"/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <for variable="i" start="0" end="n" direction="inc" step="1">
+                <output expression="&quot;Masukkan tinggi badan orang (cm) : &quot;" newline="True"/>
+                <input variable="tinggi"/>
+                <output expression="&quot;Masukkan berat badan orang (kg) : &quot;" newline="True"/>
+                <input variable="berat"/>
+                <assign variable="tinggi" expression="tinggi/100"/>
+                <assign variable="bmi" expression="berat/(tinggi*tinggi)"/>
+                <assign variable="badan" expression="bmi"/>
+                <output expression="&quot;Jumlah BMI orang ke-&quot;" newline="False"/>
+                <output expression="i+1" newline="False"/>
+                <output expression="&quot; adalah &quot;" newline="False"/>
+                <output expression="bmi" newline="False"/>
+                <output expression="&quot; dan dikategorikan badan yang &quot;" newline="True"/>
+                <output expression="badan" newline="True"/>
+                <if expression="badan &lt; 18.5">
+                    <then>
+                        <output expression="&quot;kurus&quot;" newline="True"/>
+                    </then>
+                    <else>
+                        <if expression="badan &lt; 23">
+                            <then>
+                                <output expression="&quot;normal&quot;" newline="True"/>
+                            </then>
+                            <else>
+                                <if expression="badan &lt; 30">
+                                    <then>
+                                        <output expression="&quot;diatas normal&quot;" newline="True"/>
+                                    </then>
+                                    <else>
+                                        <if expression="badan &gt; 30">
+                                            <then>
+                                                <output expression="&quot;obesitas&quot;" newline="True"/>
+                                            </then>
+                                            <else>
+                                                <output expression="&quot;Error&quot;" newline="True"/>
+                                            </else>
+                                        </if>
+                                    </else>
+                                </if>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

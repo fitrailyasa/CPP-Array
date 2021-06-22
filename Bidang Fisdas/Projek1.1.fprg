@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="ndejo"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-05-19 11:12:38 PM"/>
+        <attribute name="created" value="bmRlam87RklUUkFJTFlBU0E7MjAyMS0wNS0xMTswNTozMjoxOCBQTTsyNjI4"/>
+        <attribute name="edited" value="bmRlam87RklUUkFJTFlBU0E7MjAyMS0wNS0xOTsxMToxMjozOCBQTTs3OzI3NDc="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="nama" type="String" array="True" size="25"/>
+            <declare name="m, v, s, t, a" type="Real" array="False" size=""/>
+            <declare name="mJenis, kec, gaya, frek" type="Real" array="False" size=""/>
+            <declare name="ulang" type="String" array="False" size=""/>
+            <declare name="pilih" type="Integer" array="False" size=""/>
+            <output expression="&quot;Selamat datang mahasiswa Itera di mata kuliah Fisika Dasar&quot;" newline="True"/>
+            <output expression="&quot;Masukkan nama anda : &quot;" newline="True"/>
+            <input variable="nama[1]"/>
+            <output expression="&quot;Hai &quot;" newline="False"/>
+            <output expression="nama[1]" newline="True"/>
+            <do expression="ulang == &quot;y&quot; or ulang == &quot;Y&quot;">
+                <output expression="&quot;Pilih salah satu bahasan yang diinginkan &quot;" newline="True"/>
+                <output expression="&quot;1. Menghitung Massa Jenis&quot;" newline="True"/>
+                <output expression="&quot;2. Besar gaya&quot;" newline="True"/>
+                <output expression="&quot;3. Kecepatan benda&quot;" newline="True"/>
+                <output expression="&quot;4. Menghitung Frekuensi Getaran&quot;" newline="True"/>
+                <output expression="&quot;Pilihan anda: &quot;" newline="True"/>
+                <input variable="pilih"/>
+                <if expression="pilih == 1">
+                    <then>
+                        <output expression="&quot;1. Menghitung Massa Jenis&quot;" newline="True"/>
+                        <output expression="&quot;a. Masukkan nilai massa(kg): &quot;" newline="True"/>
+                        <input variable="m"/>
+                        <output expression="&quot;b. Masukkan nilai volume(m3): &quot;" newline="True"/>
+                        <input variable="v"/>
+                        <assign variable="mjenis" expression="m/v"/>
+                        <output expression="&quot;c. Nilai Massa Jenis adalah: &quot;" newline="True"/>
+                        <output expression="mJenis" newline="True"/>
+                    </then>
+                    <else>
+                        <if expression="pilih == 2">
+                            <then>
+                                <output expression="&quot;2. Menghitung Besar Gaya&quot;" newline="True"/>
+                                <output expression="&quot;a. Masukkan nilai massa(kg): &quot;" newline="True"/>
+                                <input variable="m"/>
+                                <output expression="&quot;b. Masukkan nilai percepatan gravitasi bumi(m3):&quot;" newline="True"/>
+                                <input variable="a"/>
+                                <assign variable="gaya" expression="m*a"/>
+                                <output expression="&quot;c. Nilai Gaya adalah &quot;" newline="True"/>
+                                <output expression="gaya" newline="True"/>
+                            </then>
+                            <else>
+                                <if expression="pilih == 3">
+                                    <then>
+                                        <output expression="&quot;3. Menghitung Kecepatan&quot;" newline="True"/>
+                                        <output expression="&quot;a. Masukkan nilai jarak(m): &quot;" newline="True"/>
+                                        <input variable="s"/>
+                                        <output expression="&quot;b. Masukkan nilai waktu(s): &quot;" newline="True"/>
+                                        <input variable="t"/>
+                                        <assign variable="kec" expression="s/t"/>
+                                        <output expression="&quot;c. Nilai Kecepatan adalah: &quot;" newline="True"/>
+                                        <output expression="kec" newline="True"/>
+                                    </then>
+                                    <else>
+                                        <if expression="pilih == 4">
+                                            <then>
+                                                <output expression="&quot;4. Menghitung Frekuensi Getaran&quot;" newline="True"/>
+                                                <output expression="&quot;a. Masukkan nilai Periode Getaran: &quot;" newline="True"/>
+                                                <input variable="t"/>
+                                                <assign variable="frek" expression="1/t"/>
+                                                <output expression="&quot;b. Nilai Frekuensi Getaran adalah: &quot;" newline="True"/>
+                                                <output expression="frek" newline="True"/>
+                                            </then>
+                                            <else>
+                                                <output expression="&quot;Pilihan anda tidak ada dalam daftar&quot;" newline="True"/>
+                                            </else>
+                                        </if>
+                                    </else>
+                                </if>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+                <output expression="&quot;Ingin Hitung Lagi (Y/T)? &quot;" newline="True"/>
+                <input variable="ulang"/>
+            </do>
+        </body>
+    </function>
+</flowgorithm>

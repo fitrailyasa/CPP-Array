@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="ndejo"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-05-19 02:01:18 AM"/>
+        <attribute name="created" value="bmRlam87RklUUkFJTFlBU0E7MjAyMS0wNS0xNzswMzo1Njo0NSBQTTsyNjM4"/>
+        <attribute name="edited" value="bmRlam87RklUUkFJTFlBU0E7MjAyMS0wNS0xOTswMjowMToxOCBBTTsxMjsyNzcy"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="Deklarasi Tipe Data Variabel"/>
+            <comment text="Tipe data Array Tekanan zat padat"/>
+            <declare name="P" type="Real" array="True" size="2"/>
+            <declare name="ulang" type="String" array="False" size=""/>
+            <declare name="pilih" type="Integer" array="False" size=""/>
+            <comment text="Judul"/>
+            <output expression="&quot;PROGRAM FISIKA DASAR&#13;&#10;TEKANAN ZAT PADAT&quot;" newline="True"/>
+            <do expression="ulang == &quot;y&quot; or ulang == &quot;Y&quot;">
+                <output expression="&quot;Menu Pilihan :&quot;" newline="True"/>
+                <output expression="&quot;1. Tekanan Zat Padat&quot;" newline="True"/>
+                <output expression="&quot;2. Besar Gaya&quot;" newline="True"/>
+                <output expression="&quot;3. Luas Permukaan&quot;" newline="True"/>
+                <input variable="pilih"/>
+                <comment text="Percabangan"/>
+                <if expression="pilih == 1">
+                    <then>
+                        <comment text="Pilihan 1"/>
+                        <output expression="&quot;Menghitung Tekanan Zat Padat&quot;" newline="True"/>
+                        <output expression="&quot;Masukkan besar gaya: &quot;" newline="True"/>
+                        <input variable="P[0]"/>
+                        <output expression="&quot;Masukkan luas permukaan: &quot;" newline="True"/>
+                        <input variable="P[1]"/>
+                        <output expression="&quot;Besar tekanan zat padat adalah &quot;" newline="True"/>
+                        <output expression="P[0]/P[1]" newline="True"/>
+                    </then>
+                    <else>
+                        <if expression="pilih == 2">
+                            <then>
+                                <comment text="Pilihan 2"/>
+                                <output expression="&quot;Menghitung Besar Gaya&quot;" newline="True"/>
+                                <output expression="&quot;Masukkan besar tekanan zat padat(P): &quot;" newline="True"/>
+                                <input variable="P[0]"/>
+                                <output expression="&quot;Masukkan luas permukaan: &quot;" newline="True"/>
+                                <input variable="P[1]"/>
+                                <output expression="&quot;Besar gaya adalah &quot;" newline="True"/>
+                                <output expression="P[0]*P[1]" newline="True"/>
+                            </then>
+                            <else>
+                                <if expression="pilih == 3">
+                                    <then>
+                                        <comment text="Pilihan 3"/>
+                                        <output expression="&quot;Menghitung Luas Permukaan&quot;" newline="True"/>
+                                        <output expression="&quot;Masukkan besar tekanan zat padat(P): &quot;" newline="True"/>
+                                        <input variable="P[0]"/>
+                                        <output expression="&quot;Masukkan besar gaya: &quot;" newline="True"/>
+                                        <input variable="P[1]"/>
+                                        <output expression="&quot;Besar luas permukaan adalah &quot;" newline="True"/>
+                                        <output expression="P[1]/P[0]" newline="True"/>
+                                    </then>
+                                    <else>
+                                        <comment text="Selain Pilihan dari pilihan diatas"/>
+                                        <output expression="&quot;ERROR!&quot;" newline="True"/>
+                                    </else>
+                                </if>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+                <comment text="Ulang"/>
+                <output expression="&quot;Ingin Hitung Lagi (Y/T)? &quot;" newline="True"/>
+                <input variable="ulang"/>
+            </do>
+        </body>
+    </function>
+</flowgorithm>

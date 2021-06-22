@@ -1,0 +1,178 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="ndejo"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-05-19 02:55:18 AM"/>
+        <attribute name="created" value="bmRlam87RklUUkFJTFlBU0E7MjAyMS0wNS0xNzswNzowNzo0MSBQTTsyNjM0"/>
+        <attribute name="edited" value="bmRlam87RklUUkFJTFlBU0E7MjAyMS0wNS0xNzswODoxOToyMCBQTTsxO25kZWpvO0ZJVFJBSUxZQVNBOzIwMjEtMDUtMTc7MDM6NTY6NDUgUE07MTIwMjIwMDc0X3Byb2dyYW0xLmZwcmc7NzMzMA=="/>
+        <attribute name="edited" value="bmRlam87RklUUkFJTFlBU0E7MjAyMS0wNS0xOTswMjo1NToxOCBBTTsyMDsyNzgw"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="Deklarasi Tipe Data Variabel"/>
+            <declare name="n, x, i, j, k" type="Integer" array="False" size=""/>
+            <assign variable="k" expression="1"/>
+            <comment text="Tipe Data Array modus"/>
+            <declare name="modus, banyak, nilai" type="Integer" array="True" size="100"/>
+            <declare name="mean, med, jumlah" type="Real" array="False" size=""/>
+            <assign variable="jumlah" expression="0"/>
+            <declare name="ulang" type="String" array="False" size=""/>
+            <declare name="pilih" type="Integer" array="False" size=""/>
+            <comment text="Judul"/>
+            <output expression="&quot;PROGRAM MATEMATIKA DASAR&#13;&#10;MEAN, MODUS &amp; MEDIAN&quot;" newline="True"/>
+            <do expression="ulang == &quot;y&quot; or ulang == &quot;Y&quot;">
+                <output expression="&quot;Menu Pilihan :&quot;" newline="True"/>
+                <output expression="&quot;1. Mean&quot;" newline="True"/>
+                <output expression="&quot;2. Modus&quot;" newline="True"/>
+                <output expression="&quot;3. Median&quot;" newline="True"/>
+                <input variable="pilih"/>
+                <comment text="Percabangan"/>
+                <output expression="&quot;Masukkan jumlah bilangan : &quot;" newline="True"/>
+                <input variable="n"/>
+                <for variable="i" start="1" end="n" direction="inc" step="1">
+                    <output expression="&quot;Masukkan nilai bilangan ke - &quot;" newline="False"/>
+                    <output expression="i" newline="False"/>
+                    <output expression="&quot; : &quot;" newline="True"/>
+                    <input variable="nilai[i]"/>
+                </for>
+                <if expression="pilih == 1">
+                    <then>
+                        <comment text="Pilihan 1"/>
+                        <for variable="i" start="1" end="n" direction="inc" step="1">
+                            <assign variable="jumlah" expression="jumlah+nilai[i]"/>
+                        </for>
+                        <assign variable="mean" expression="jumlah/n"/>
+                        <output expression="&quot;Mean = &quot;" newline="True"/>
+                        <output expression="mean" newline="True"/>
+                    </then>
+                    <else>
+                        <if expression="pilih == 2">
+                            <then>
+                                <comment text="Pilihan 2"/>
+                                <comment text="Mengurutkan data"/>
+                                <output expression="&quot;nilai yang diurutkan&quot;" newline="True"/>
+                                <for variable="i" start="1" end="n" direction="inc" step="1">
+                                    <for variable="j" start="i+1" end="n-1" direction="inc" step="1">
+                                        <if expression="nilai[i] &gt;= nilai[j]">
+                                            <then>
+                                                <declare name="urut" type="Integer" array="False" size=""/>
+                                                <assign variable="urut" expression="nilai[i]"/>
+                                                <assign variable="nilai[i]" expression="nilai[j]"/>
+                                                <assign variable="nilai[j]" expression="urut"/>
+                                            </then>
+                                            <else/>
+                                        </if>
+                                    </for>
+                                    <output expression="nilai[i]" newline="True"/>
+                                    <output expression="&quot;  &quot;" newline="True"/>
+                                </for>
+                                <comment text="Menghitung berapa kali muncul tiap angka"/>
+                                <for variable="i" start="1" end="n" direction="inc" step="1">
+                                    <assign variable="banyak[i]" expression="0"/>
+                                    <for variable="j" start="i" end="n" direction="inc" step="1">
+                                        <if expression="nilai[i] &gt; nilai[j]">
+                                            <then>
+                                                <assign variable="banyak[i]" expression="banyak[i]+1"/>
+                                            </then>
+                                            <else/>
+                                        </if>
+                                    </for>
+                                </for>
+                                <comment text="Menentukan nilai yang paling sering muncul"/>
+                                <for variable="i" start="1" end="n" direction="inc" step="1">
+                                    <if expression="banyak[i] &gt; k">
+                                        <then>
+                                            <assign variable="k" expression="banyak[i]"/>
+                                        </then>
+                                        <else/>
+                                    </if>
+                                </for>
+                                <comment text="Jika modus lebih dari satu"/>
+                                <for variable="i" start="1" end="n" direction="inc" step="1">
+                                    <if expression="x == 0">
+                                        <then>
+                                            <assign variable="modus[x]" expression="0"/>
+                                        </then>
+                                        <else>
+                                            <assign variable="modus[x]" expression="modus[x-1]"/>
+                                        </else>
+                                    </if>
+                                    <if expression="banyak[i] == k">
+                                        <then>
+                                            <if expression="nilai[i] != modus[x]">
+                                                <then>
+                                                    <assign variable="modus[x]" expression="nilai[i]"/>
+                                                    <assign variable="x" expression="x+1"/>
+                                                </then>
+                                                <else/>
+                                            </if>
+                                        </then>
+                                        <else/>
+                                    </if>
+                                </for>
+                                <comment text="Jika Semua angka muncul sama banyak"/>
+                                <declare name="z" type="Integer" array="False" size=""/>
+                                <assign variable="z" expression="0"/>
+                                <for variable="i" start="1" end="n" direction="inc" step="1">
+                                    <if expression="banyak[i] == k">
+                                        <then>
+                                            <assign variable="z" expression="z+1"/>
+                                        </then>
+                                        <else/>
+                                    </if>
+                                </for>
+                                <if expression="z == n">
+                                    <then>
+                                        <assign variable="x" expression="0"/>
+                                    </then>
+                                    <else/>
+                                </if>
+                                <comment text="Hasil"/>
+                                <if expression="x == 0">
+                                    <then>
+                                        <output expression="&quot;Tidak Ada Modus!&quot;" newline="True"/>
+                                    </then>
+                                    <else>
+                                        <output expression="&quot;Modus ada &quot;" newline="False"/>
+                                        <output expression="x" newline="False"/>
+                                        <output expression="&quot; = &quot;" newline="True"/>
+                                        <for variable="i" start="1" end="x" direction="inc" step="1">
+                                            <output expression="modus[i]" newline="True"/>
+                                        </for>
+                                    </else>
+                                </if>
+                            </then>
+                            <else>
+                                <if expression="pilih == 3">
+                                    <then>
+                                        <comment text="Pilihan 3"/>
+                                        <if expression="n % 2 == 0">
+                                            <then>
+                                                <assign variable="med" expression="(nilai[(n/2)]+nilai[(n/2)-1])/2"/>
+                                            </then>
+                                            <else>
+                                                <assign variable="med" expression="nilai[(n/2)]"/>
+                                            </else>
+                                        </if>
+                                        <output expression="&quot;Median = &quot;" newline="True"/>
+                                        <output expression="med" newline="True"/>
+                                    </then>
+                                    <else>
+                                        <comment text="Selain Pilihan dari pilihan diatas"/>
+                                        <output expression="&quot;ERROR!&quot;" newline="True"/>
+                                    </else>
+                                </if>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+                <comment text="Ulang"/>
+                <output expression="&quot;Ingin Hitung Lagi (Y/T)? &quot;" newline="True"/>
+                <input variable="ulang"/>
+            </do>
+        </body>
+    </function>
+</flowgorithm>
